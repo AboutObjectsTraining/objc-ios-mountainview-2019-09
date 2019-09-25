@@ -11,15 +11,23 @@
 @implementation Person
 
 - (instancetype)init {
-    return nil;
+    return [self initWithFirstName:nil lastName:nil age:0];
 }
 
-- (instancetype)initWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSInteger)age {
++ (instancetype)personWithFirstName:(NSString *)firstName
+                           lastName:(NSString *)lastName
+                                age:(NSInteger)age {
+    return [[self alloc] initWithFirstName:firstName lastName:lastName age:age];
+}
+
+- (instancetype)initWithFirstName:(NSString *)firstName
+                         lastName:(NSString *)lastName
+                              age:(NSInteger)age {
     self = [super init];
     if (self) {
-        self.firstName = firstName;
-        self.lastName = lastName;
-        self.age = age;
+        _firstName = firstName;
+        _lastName = lastName;
+        _age = age;
     }
     return self;
 }
