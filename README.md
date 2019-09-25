@@ -20,6 +20,13 @@ September 23 – 27, 2019
 * Solution code for the Coolness app and additional example projects
   
   https://github.com/AboutObjectsTraining/ios-objc-code
+  
+* Block Literal Documenation Links
+
+  http://goshdarnblocksyntax.com
+  https://clang.llvm.org/docs/BlockLanguageSpec.html
+  https://clang.llvm.org/docs/Block-ABI-Apple.html
+
 
 * Solution code for the ReadingList app
   
