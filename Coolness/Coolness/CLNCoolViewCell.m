@@ -119,17 +119,24 @@ UIEdgeInsets CLNTextInsets = { .top = 7, .left = 12, .bottom = 8, .right = 12 };
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.highlighted = YES;
     [self.superview bringSubviewToFront:self];
+    [UIApplication.sharedApplication sendAction:@selector(resignFirstResponder)
+                                             to:nil
+                                           from:nil
+                                       forEvent:nil];
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = touches.anyObject;
-    CGPoint currLocation = [touch locationInView:nil];
-    CGPoint prevLocation = [touch previousLocationInView:nil];
+    CGPoint currLocation = [touch locationInView:self.superview];
+    CGPoint prevLocation = [touch previousLocationInView:self.superview];
     
     CGFloat dx = currLocation.x - prevLocation.x;
     CGFloat dy = currLocation.y - prevLocation.y;
     
-    touch.view.frame = CGRectOffset(touch.view.frame, dx, dy);
+    CGRect proposedFrame = CGRectOffset(self.frame, dx, dy);
+    
+    if (CGRectContainsRect(self.superview.bounds, proposedFrame))
+        self.frame = proposedFrame;
 }
 
 - (void)endTouch {
