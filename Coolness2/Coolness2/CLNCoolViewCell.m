@@ -159,6 +159,4 @@ UIEdgeInsets CLNTextInsets = { .top = 7, .left = 12, .bottom = 8, .right = 12 };
     [self endTouch];
 }
 
-
-
 @end

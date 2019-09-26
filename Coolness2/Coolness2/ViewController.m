@@ -8,7 +8,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *textField;
 @property (nonatomic, strong) IBOutlet UIView *contentView;
 @property (nonatomic, strong) IBOutlet UIView *accessoryView;
-
 @end
 
 @implementation ViewController
@@ -20,22 +19,9 @@
     newCell.backgroundColor = UIColor.greenColor;
 }
 
--(void)viewDidLoad {
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.textField resignFirstResponder];
     return YES;
 }
-
-//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    UITouch *touch = touches.anyObject;
-//    CGPoint currLocation = [touch locationInView:nil];
-//    CGPoint prevLocation = [touch previousLocationInView:nil];
-//
-//    CGFloat dx = currLocation.x - prevLocation.x;
-//
-//    touch.view.frame = CGRectOffset(touch.view.frame, dx, 0);
-//}
 
 @end
