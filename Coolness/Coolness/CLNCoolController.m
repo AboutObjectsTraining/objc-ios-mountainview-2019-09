@@ -59,7 +59,7 @@
     subview1.text = @"Hello World! 🌍🌎🌏";
     subview2.text = @"Cool View Cells Rock! 🍾🥂";
     
-    subview1.backgroundColor = UIColor.purpleColor;
+    subview1.backgroundColor = UIColor.clearColor;
     subview2.backgroundColor = UIColor.orangeColor;
 }
 

@@ -5,7 +5,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewController : UIViewController
+@interface CLNCoolViewCell : UIView
+
+@property (nonatomic, copy) NSString *text;
 
 @end
 

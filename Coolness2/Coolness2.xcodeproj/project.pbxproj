@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		FB12C3A3233C3AF4008BE96D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB12C3A2233C3AF4008BE96D /* AppDelegate.m */; };
 		FB12C3A6233C3AF4008BE96D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB12C3A5233C3AF4008BE96D /* ViewController.m */; };
-		FB12C3A9233C3AF4008BE96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB12C3A7233C3AF4008BE96D /* Main.storyboard */; };
 		FB12C3AB233C3AFA008BE96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB12C3AA233C3AFA008BE96D /* Assets.xcassets */; };
 		FB12C3AE233C3AFA008BE96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB12C3AC233C3AFA008BE96D /* LaunchScreen.storyboard */; };
 		FB12C3B1233C3AFA008BE96D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB12C3B0233C3AFA008BE96D /* main.m */; };
 		FB12C3BB233C3AFA008BE96D /* Coolness2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB12C3BA233C3AFA008BE96D /* Coolness2Tests.m */; };
+		FB58BA10233D3E5B006F8472 /* CoolStuff.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB58BA0F233D3E5B006F8472 /* CoolStuff.xib */; };
+		FB58BA18233D4457006F8472 /* CLNCoolViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB58BA17233D4457006F8472 /* CLNCoolViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,6 @@
 		FB12C3A2233C3AF4008BE96D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB12C3A4233C3AF4008BE96D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FB12C3A5233C3AF4008BE96D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FB12C3A8233C3AF4008BE96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB12C3AA233C3AFA008BE96D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB12C3AD233C3AFA008BE96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB12C3AF233C3AFA008BE96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +40,9 @@
 		FB12C3B6233C3AFA008BE96D /* Coolness2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Coolness2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB12C3BA233C3AFA008BE96D /* Coolness2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coolness2Tests.m; sourceTree = "<group>"; };
 		FB12C3BC233C3AFA008BE96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB58BA0F233D3E5B006F8472 /* CoolStuff.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoolStuff.xib; sourceTree = "<group>"; };
+		FB58BA16233D4457006F8472 /* CLNCoolViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLNCoolViewCell.h; sourceTree = "<group>"; };
+		FB58BA17233D4457006F8472 /* CLNCoolViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNCoolViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +86,11 @@
 			children = (
 				FB12C3A1233C3AF4008BE96D /* AppDelegate.h */,
 				FB12C3A2233C3AF4008BE96D /* AppDelegate.m */,
+				FB58BA0F233D3E5B006F8472 /* CoolStuff.xib */,
 				FB12C3A4233C3AF4008BE96D /* ViewController.h */,
 				FB12C3A5233C3AF4008BE96D /* ViewController.m */,
-				FB12C3A7233C3AF4008BE96D /* Main.storyboard */,
+				FB58BA16233D4457006F8472 /* CLNCoolViewCell.h */,
+				FB58BA17233D4457006F8472 /* CLNCoolViewCell.m */,
 				FB12C3AA233C3AFA008BE96D /* Assets.xcassets */,
 				FB12C3AC233C3AFA008BE96D /* LaunchScreen.storyboard */,
 				FB12C3AF233C3AFA008BE96D /* Info.plist */,
@@ -184,8 +189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB12C3AE233C3AFA008BE96D /* LaunchScreen.storyboard in Resources */,
+				FB58BA10233D3E5B006F8472 /* CoolStuff.xib in Resources */,
 				FB12C3AB233C3AFA008BE96D /* Assets.xcassets in Resources */,
-				FB12C3A9233C3AF4008BE96D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB12C3A6233C3AF4008BE96D /* ViewController.m in Sources */,
+				FB58BA18233D4457006F8472 /* CLNCoolViewCell.m in Sources */,
 				FB12C3B1233C3AFA008BE96D /* main.m in Sources */,
 				FB12C3A3233C3AF4008BE96D /* AppDelegate.m in Sources */,
 			);
@@ -228,14 +234,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FB12C3A7233C3AF4008BE96D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB12C3A8233C3AF4008BE96D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FB12C3AC233C3AFA008BE96D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
