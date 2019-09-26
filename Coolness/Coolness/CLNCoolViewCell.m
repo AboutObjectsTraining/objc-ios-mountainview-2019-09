@@ -39,15 +39,10 @@ UIEdgeInsets CLNTextInsets = { .top = 7, .left = 12, .bottom = 8, .right = 12 };
 }
 
 - (void)translateAnimationWithSize:(CGSize)size {
-//    [UIView setAnimationRepeatCount:3.0];
-//    [UIView setAnimationRepeatAutoreverses:YES];
-    CGAffineTransform translation = CGAffineTransformMakeTranslation(size.width, size.height);
-    self.transform = translation;
+    self.frame = CGRectOffset(self.frame, size.width, size.height);
 }
 
 - (void)rotateAnimation {
-//    [UIView setAnimationRepeatCount:3.0];
-//    [UIView setAnimationRepeatAutoreverses:YES];
     CGAffineTransform rotation = CGAffineTransformMakeRotation(M_PI_2);
     self.transform = rotation;
     self.alpha = 0.0;
@@ -56,31 +51,34 @@ UIEdgeInsets CLNTextInsets = { .top = 7, .left = 12, .bottom = 8, .right = 12 };
 - (void)animateBounceWithDuration:(NSTimeInterval)duration
                              size:(CGSize)size {
     typeof(self) __weak weakSelf = self;
+    self.alpha = 1.0;
     [UIView animateWithDuration:duration
                      animations:^{
-        typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf translateAnimationWithSize:size];
-    }
-    completion:^(BOOL finished) {
-        [UIView animateWithDuration:duration
-                         animations:^{
-            typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf rotateAnimation];
-        }
-        completion:^(BOOL finished) {
-            [UIView animateWithDuration:duration
-                             animations:^{
-                typeof(weakSelf) strongSelf = weakSelf;
-                [strongSelf rotateAnimation];
-            }
-                             completion:^(BOOL finished) {
-                typeof(weakSelf) strongSelf = weakSelf;
-                CGAffineTransform rotation = CGAffineTransformMakeRotation(-M_PI_2);
-                self.transform = rotation;
-                strongSelf.alpha = 1.0;
-            }];
-        }];
-    }];
+                         typeof(weakSelf) strongSelf = weakSelf;
+                         [strongSelf translateAnimationWithSize:size];
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:duration
+                                          animations:^{
+                                              typeof(weakSelf) strongSelf = weakSelf;
+                                              [strongSelf rotateAnimation];
+                                          }
+                                          completion:^(BOOL finished) {
+                                              [UIView animateWithDuration:duration
+                                                               animations:^{
+                                                                   typeof(weakSelf) strongSelf = weakSelf;
+                                                                   strongSelf.alpha = 1.0;
+                                                                   strongSelf.transform = CGAffineTransformIdentity;
+                                                               }
+                                                               completion:^(BOOL finished) {
+                                                                   [UIView animateWithDuration:duration
+                                                                                    animations:^{
+                                                                                        typeof(weakSelf) strongSelf = weakSelf;
+                                                                                        [strongSelf translateAnimationWithSize:CGSizeMake(-size.width, -size.height)];
+                                                                                    }];
+                                                               }];
+                                          }];
+                     }];
 }
 
 - (void)configureLayer {
