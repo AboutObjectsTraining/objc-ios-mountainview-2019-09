@@ -8,6 +8,7 @@
 
 #import "ReadingListTableViewController.h"
 #import "CLNCoolViewCell.h"
+#import "PictureTableViewCell.h"
 
 @interface ReadingListTableViewController ()
 
@@ -119,12 +120,33 @@
     return self.data[section].count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.row % 3 == 2 ? 88.0 : 44.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = indexPath.row % 2 ? @"Book" : @"Green Book";
+    NSString *identifier = @"Book";
+    switch (indexPath.row % 3) {
+        case 0:
+            identifier = @"Book";
+            break;
+        case 1:
+            identifier = @"Green Book";
+            break;
+        case 2:
+            identifier = @"Picture";
+            break;
+    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
-    cell.textLabel.text = self.data[indexPath.section][indexPath.row];
-    
+    if (indexPath.row % 3 != 2) {
+        cell.textLabel.text = self.data[indexPath.section][indexPath.row];
+    } else {
+        PictureTableViewCell *pic = (PictureTableViewCell*)cell;
+        pic.label.text = self.data[indexPath.section][indexPath.row];
+        pic.image.image = [UIImage imageNamed:@"rvs"];
+    }
+
     return cell;
 }
 

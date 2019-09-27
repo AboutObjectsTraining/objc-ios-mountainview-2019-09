@@ -67,6 +67,31 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Picture" rowHeight="88" id="kRb-h4-8D4" customClass="PictureTableViewCell">
+                                <rect key="frame" x="0.0" y="116" width="414" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kRb-h4-8D4" id="l0H-Mu-5qE">
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rvs" translatesAutoresizingMaskIntoConstraints="NO" id="APc-FC-D01">
+                                            <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvq-Ec-uMh">
+                                            <rect key="frame" x="88" y="33" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="image" destination="APc-FC-D01" id="Sn6-Gz-iMP"/>
+                                    <outlet property="label" destination="Qvq-Ec-uMh" id="3fY-R4-hrB"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="4bY-gU-Z4p" id="gO1-DC-XAA"/>
@@ -77,7 +102,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqm-Hx-Tva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="403" y="560"/>
+            <point key="canvasLocation" x="402.89855072463769" y="559.82142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CrD-gT-E7d">
@@ -96,4 +121,7 @@
             <point key="canvasLocation" x="-516" y="560"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rvs" width="240" height="240"/>
+    </resources>
 </document>
