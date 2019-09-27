@@ -7,12 +7,15 @@
 //
 
 #import "ReadingListTableViewController.h"
+#import "BookDetailViewController.h"
 #import "CLNCoolViewCell.h"
 #import "PictureTableViewCell.h"
+#import "Book.h"
+#import "Author.h"
 
 @interface ReadingListTableViewController ()
 
-@property (nonatomic, strong) NSArray <NSArray <NSString *> *> *data;
+@property (nonatomic, strong) NSMutableArray <NSMutableArray <Book *> *> *data;
 @property (nonatomic, strong) NSArray <NSString *> *sections;
 
 
@@ -22,73 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sections = @[
-                      @"Mysteries",
-                      @"Literature",
-                      @"Biographies",
-                      @"Sci-Fi"
-                      ];
-    self.data = @[
-                  @[
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report"
-                      ],
-                  @[
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot"
-                      ],
-                  @[
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot"],
-                  @[
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report",
-                      @"For Whom The Bell Tolls",
-                      @"The Thread that Runs So True",
-                      @"I, Robot",
-                      @"The Muehler Report"
-                      ]
-                  ];
+    self.sections = @[@"Literature"];
+    self.data = @[[Book readingList].mutableCopy].mutableCopy;
 }
 
 #pragma mark - Table view data source
@@ -140,10 +78,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     if (indexPath.row % 3 != 2) {
-        cell.textLabel.text = self.data[indexPath.section][indexPath.row];
+        cell.textLabel.text = self.data[indexPath.section][indexPath.row].title;
+        cell.detailTextLabel.text = self.data[indexPath.section][indexPath.row].author.fullName;
     } else {
         PictureTableViewCell *pic = (PictureTableViewCell*)cell;
-        pic.label.text = self.data[indexPath.section][indexPath.row];
+        pic.label.text = self.data[indexPath.section][indexPath.row].title;
+        pic.author.text = self.data[indexPath.section][indexPath.row].author.fullName;
         pic.image.image = [UIImage imageNamed:@"rvs"];
     }
 
@@ -184,14 +124,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UIViewController *dest = segue.destinationViewController;
+    if ([dest isKindOfClass:[BookDetailViewController class]]) {
+        BookDetailViewController *bookDetailVC = (BookDetailViewController*) dest;
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        Book *book = self.data[path.section][path.row];
+        bookDetailVC.book = book;
+        [bookDetailVC setUpdateBook:^(Book * _Nonnull book) {
+            self.data[path.section][path.row] = book;
+            [self.tableView reloadData];
+        }];
+    }
 }
-*/
 
 @end

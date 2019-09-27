@@ -19,6 +19,7 @@
 		FB497352233EAE9100196F08 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = FB497351233EAE9100196F08 /* Book.m */; };
 		FB497355233EAF5D00196F08 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = FB497354233EAF5D00196F08 /* Author.m */; };
 		FB497358233EB35D00196F08 /* ModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FB497357233EB35D00196F08 /* ModelObject.m */; };
+		FB49735C233EC1A800196F08 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB49735B233EC1A800196F08 /* BookDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		FB497354233EAF5D00196F08 /* Author.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 		FB497356233EB35D00196F08 /* ModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelObject.h; sourceTree = "<group>"; };
 		FB497357233EB35D00196F08 /* ModelObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelObject.m; sourceTree = "<group>"; };
+		FB49735A233EC1A800196F08 /* BookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		FB49735B233EC1A800196F08 /* BookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,7 @@
 		FB497321233D74C200196F08 /* ReadingList */ = {
 			isa = PBXGroup;
 			children = (
+				FB497359233EC18000196F08 /* ViewControllers */,
 				FB49734F233EAE5E00196F08 /* Models */,
 				FB497322233D74C200196F08 /* AppDelegate.h */,
 				FB497323233D74C200196F08 /* AppDelegate.m */,
@@ -134,6 +138,15 @@
 				FB497357233EB35D00196F08 /* ModelObject.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FB497359233EC18000196F08 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB49735A233EC1A800196F08 /* BookDetailViewController.h */,
+				FB49735B233EC1A800196F08 /* BookDetailViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +257,7 @@
 				FB497332233D74C700196F08 /* main.m in Sources */,
 				FB497352233EAE9100196F08 /* Book.m in Sources */,
 				FB497324233D74C200196F08 /* AppDelegate.m in Sources */,
+				FB49735C233EC1A800196F08 /* BookDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

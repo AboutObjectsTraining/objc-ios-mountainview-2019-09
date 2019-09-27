@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ModelObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class Author;
 
-@interface Book : NSObject
+@interface Book : ModelObject
+
++ (NSArray <Book *> *) readingList;
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *year;
+@property (nonatomic, copy) NSNumber *year;
 @property (nonatomic, retain) Author *author;
 
 @end

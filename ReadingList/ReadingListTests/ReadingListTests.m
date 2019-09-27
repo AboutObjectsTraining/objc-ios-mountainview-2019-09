@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Author.h"
+#import "Book.h"
 
 @interface ReadingListTests : XCTestCase
 
@@ -32,11 +33,23 @@
     XCTAssertNotNil(a, @"author was nil");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testBookCreation {
+    NSDictionary *d = @{
+                        @"title": @"adventures in teaching objc",
+                        @"year": @2019,
+                        @"author": @{
+                                @"firstName": @"Van",
+                                @"lastName": @"Simmons"
+                                }
+                        };
+    Book *b = [[Book alloc] initWithDictionary:d];
+    XCTAssertNotNil(b, @"author was nil");
+}
+
+- (void)testReadingListCreation {
+    NSArray *books = [Book readingList];
+    XCTAssertNotNil(books, @"books was nil");
+    XCTAssertTrue(books.count == 4, @"wrong number of books");
 }
 
 @end

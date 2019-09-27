@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PictureTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *label;
+@property (nonatomic, weak) IBOutlet UILabel *author;
 @property (nonatomic, weak) IBOutlet UIImageView *image;
 
 @end
