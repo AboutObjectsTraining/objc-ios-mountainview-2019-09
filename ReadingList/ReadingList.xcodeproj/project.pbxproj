@@ -16,6 +16,9 @@
 		FB497348233D785C00196F08 /* ReadingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB497347233D785C00196F08 /* ReadingListTableViewController.m */; };
 		FB49734B233D83D500196F08 /* CLNCoolViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB49734A233D83D500196F08 /* CLNCoolViewCell.m */; };
 		FB49734E233E787700196F08 /* PictureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB49734D233E787700196F08 /* PictureTableViewCell.m */; };
+		FB497352233EAE9100196F08 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = FB497351233EAE9100196F08 /* Book.m */; };
+		FB497355233EAF5D00196F08 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = FB497354233EAF5D00196F08 /* Author.m */; };
+		FB497358233EB35D00196F08 /* ModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FB497357233EB35D00196F08 /* ModelObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,12 @@
 		FB49734A233D83D500196F08 /* CLNCoolViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNCoolViewCell.m; sourceTree = "<group>"; };
 		FB49734C233E787700196F08 /* PictureTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureTableViewCell.h; sourceTree = "<group>"; };
 		FB49734D233E787700196F08 /* PictureTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureTableViewCell.m; sourceTree = "<group>"; };
+		FB497350233EAE9100196F08 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		FB497351233EAE9100196F08 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		FB497353233EAF5D00196F08 /* Author.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		FB497354233EAF5D00196F08 /* Author.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
+		FB497356233EB35D00196F08 /* ModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelObject.h; sourceTree = "<group>"; };
+		FB497357233EB35D00196F08 /* ModelObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +96,7 @@
 		FB497321233D74C200196F08 /* ReadingList */ = {
 			isa = PBXGroup;
 			children = (
+				FB49734F233EAE5E00196F08 /* Models */,
 				FB497322233D74C200196F08 /* AppDelegate.h */,
 				FB497323233D74C200196F08 /* AppDelegate.m */,
 				FB497346233D785C00196F08 /* ReadingListTableViewController.h */,
@@ -111,6 +121,19 @@
 				FB49733D233D74C700196F08 /* Info.plist */,
 			);
 			path = ReadingListTests;
+			sourceTree = "<group>";
+		};
+		FB49734F233EAE5E00196F08 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB497350233EAE9100196F08 /* Book.h */,
+				FB497351233EAE9100196F08 /* Book.m */,
+				FB497353233EAF5D00196F08 /* Author.h */,
+				FB497354233EAF5D00196F08 /* Author.m */,
+				FB497356233EB35D00196F08 /* ModelObject.h */,
+				FB497357233EB35D00196F08 /* ModelObject.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB497358233EB35D00196F08 /* ModelObject.m in Sources */,
 				FB497348233D785C00196F08 /* ReadingListTableViewController.m in Sources */,
 				FB49734E233E787700196F08 /* PictureTableViewCell.m in Sources */,
+				FB497355233EAF5D00196F08 /* Author.m in Sources */,
 				FB49734B233D83D500196F08 /* CLNCoolViewCell.m in Sources */,
 				FB497332233D74C700196F08 /* main.m in Sources */,
+				FB497352233EAE9100196F08 /* Book.m in Sources */,
 				FB497324233D74C200196F08 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
