@@ -90,6 +90,18 @@
     return cell;
 }
 
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView
+                  editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *delete =
+    [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive
+                                       title:@"Delete"
+                                     handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self.data[indexPath.section] removeObjectAtIndex:indexPath.row];
+        [self.tableView reloadData];
+    }];
+    return @[delete];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
