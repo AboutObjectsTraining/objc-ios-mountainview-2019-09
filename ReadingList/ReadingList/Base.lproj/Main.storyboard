@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,6 +43,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.6588235294" blue="0.59607843140000005" alpha="0.62786279965753422" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="vTD-NN-LxQ" kind="show" identifier="Green" id="ytn-t4-5kE"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Book" textLabel="76c-Vr-AxS" detailTextLabel="cWB-pj-F1Q" style="IBUITableViewCellStyleSubtitle" id="6dn-UD-yNE">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
@@ -66,6 +70,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vTD-NN-LxQ" kind="show" identifier="White" id="QIh-CU-l9B"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Picture" rowHeight="88" id="kRb-h4-8D4" customClass="PictureTableViewCell">
                                 <rect key="frame" x="0.0" y="116" width="414" height="88"/>
@@ -90,6 +97,7 @@
                                 <connections>
                                     <outlet property="image" destination="APc-FC-D01" id="Sn6-Gz-iMP"/>
                                     <outlet property="label" destination="Qvq-Ec-uMh" id="3fY-R4-hrB"/>
+                                    <segue destination="btU-UX-Lhj" kind="show" id="nv0-CQ-rlh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -103,6 +111,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqm-Hx-Tva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="402.89855072463769" y="559.82142857142856"/>
+        </scene>
+        <!--Plain-->
+        <scene sceneID="Jl9-p1-tdl">
+            <objects>
+                <viewController id="vTD-NN-LxQ" userLabel="Plain" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h0C-Sq-mj6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gwJ-fL-J0c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QzV-bP-RwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1419" y="560"/>
+        </scene>
+        <!--Picture-->
+        <scene sceneID="VFn-Cm-KBY">
+            <objects>
+                <viewController id="btU-UX-Lhj" userLabel="Picture" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Xa-lx-d07">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KgZ-BO-88t"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gga-rJ-hd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1419" y="1290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CrD-gT-E7d">
@@ -124,4 +162,7 @@
     <resources>
         <image name="rvs" width="240" height="240"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QIh-CU-l9B"/>
+    </inferredMetricsTieBreakers>
 </document>
